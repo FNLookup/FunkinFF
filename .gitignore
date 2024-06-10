@@ -3,3 +3,4 @@ peaks/
 *.ogg
 *.mid
 *.json
+**/__pycache__/
