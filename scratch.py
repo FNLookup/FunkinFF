@@ -97,12 +97,21 @@ def altCode():
 
     beatCrochetMs = (60 / bpm) * 1000
 
-    stepCrochetMs = beatCrochetMs / 4
+    noteLengthInSteps = 12
+
+    stepCrochetMs = beatCrochetMs / noteLengthInSteps
 
     ticksPerBeat = 480
 
     midi = mido.MidiFile()
     midi.ticks_per_beat = ticksPerBeat
+
+    tempoTrack = mido.MidiTrack()
+    tempoTrack.append(
+        mido.MetaMessage('set_tempo', time=0, tempo=mido.bpm2tempo(bpm))
+    )
+
+    midi.tracks.append(tempoTrack)
 
     for track in trackInfos:
         trackSuffixFile = track['track-variation-suffix']
