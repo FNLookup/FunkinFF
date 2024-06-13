@@ -93,7 +93,7 @@ def altCode():
         }
     ]
 
-    bpm = 109.99990833340972
+    bpm = 76.65
 
     beatCrochetMs = (60 / bpm) * 1000
 
@@ -125,7 +125,7 @@ def altCode():
         midiTrack.name = trackMidiName
 
         #trackMeta = json.loads(open('_fnfc/partypacker-metadata-guitar.json', 'r').read())
-        trackNotes = json.loads(open(f'_fnfc/partypacker-chart{trackSuffixFile}.json', 'r').read())
+        trackNotes = json.loads(open(f'aishite/aishite-chart{trackSuffixFile}.json', 'r').read())
 
         trackNotes_easy = trackNotes['notes'].get(f'{trackDiffPrefix}easy', [])
         trackNotes_medi = trackNotes['notes'].get(f'{trackDiffPrefix}medium', [])
